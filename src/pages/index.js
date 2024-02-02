@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => <Layout>Hello</Layout>
+const IndexPage = () => <Layout>Hello world</Layout>
 
 /**
  * Head export to define metadata for the page
