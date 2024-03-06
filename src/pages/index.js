@@ -10,7 +10,7 @@ import { Card, Col, Container, Row } from "react-bootstrap"
 const IndexPage = ({ data }) => (
   <Layout>
     <Container>
-      <h1>Netlify CMS & Gatsby</h1>
+      <h1>Decap CMS & Gatsby</h1>
       <ul>
         {data.fileInformation.edges.map(({ node }) => (
           <li key={node.id}>

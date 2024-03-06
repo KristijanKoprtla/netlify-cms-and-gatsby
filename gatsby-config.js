@@ -16,6 +16,10 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,9 +41,6 @@ module.exports = {
         path: `${__dirname}/static`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -52,6 +53,12 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `3640611747`,
       },
     },
   ],
