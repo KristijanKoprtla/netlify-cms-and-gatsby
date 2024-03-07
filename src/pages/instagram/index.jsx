@@ -7,31 +7,18 @@ import { Container, Row, Col } from "react-bootstrap"
 function Index() {
   const data = useStaticQuery(graphql`
     {
-      allInstaNode(limit: 12, sort: { timestamp: DESC }) {
+      allInstagramContent(sort: { timestamp: DESC }) {
         edges {
           node {
             id
-            likes
-            comments
-            mediaType
-            preview
-            original
+
             timestamp
             caption
-            thumbnails {
-              config_width
-              config_height
-              src
-            }
-            dimensions {
-              height
-              width
-            }
+
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 400
-                  height: 400
+                  width: 300
                   transformOptions: { fit: COVER, cropFocus: CENTER }
                 )
                 id
@@ -46,7 +33,7 @@ function Index() {
     }
   `)
 
-  const results = data.allInstaNode.edges
+  const results = data.allInstagramContent.edges
   console.log(results)
   return (
     <Layout>
