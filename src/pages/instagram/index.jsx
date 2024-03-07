@@ -29,20 +29,21 @@ function Index() {
             }
           }
         }
+        distinct(field: { permalink: SELECT })
       }
     }
   `)
 
   const results = data.allInstagramContent.edges
-  console.log(results)
+  console.log(data)
   return (
     <Layout>
       <Container>
         <Row xs={1} md={2} lg={3} className="g-4">
-          {results.map(result => (
+          {results.map((result, index) => (
             <Col key={result.node.id}>
               <a
-                href={`https://www.instagram.com/p/${result.node.id}/`}
+                href={data.allInstagramContent.distinct[index]}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -51,7 +52,7 @@ function Index() {
                   alt={result.node.localFile.childImageSharp.id}
                   className="rounded"
                 />
-                <p>Likes: {result.node.likes}</p>
+                <p>Likes: {result.node.likes > 0 ? result.node.likes : 0}</p>
                 <p>
                   Comments:{" "}
                   {result.node.comments > 0 ? result.node.comments : 0}
